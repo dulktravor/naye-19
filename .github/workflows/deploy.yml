@@ -30,6 +30,10 @@ jobs:
       - name: Instalar dependencias
         run: npm ci
 
+      # npm puede omitir este binario opcional cuando el lockfile se generó en Windows.
+      - name: Preparar compilador de Linux
+        run: npm install --no-save @rolldown/binding-linux-x64-gnu@1.0.1
+
       - name: Compilar sitio
         run: npm run build
 
