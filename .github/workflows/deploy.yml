@@ -30,6 +30,9 @@ jobs:
       - name: Instalar dependencias
         run: npm ci
 
+      - name: Instalar componentes nativos de Linux
+        run: npm install --no-save @rolldown/binding-linux-x64-gnu@1.0.1 lightningcss-linux-x64-gnu@1.32.0
+
       - name: Construir página
         run: npm run build
 
